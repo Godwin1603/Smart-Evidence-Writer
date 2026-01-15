@@ -57,6 +57,7 @@ Smart Evidence Writer ingests a single piece of digital evidence—video, image,
 Below is the actual interface used to upload digital evidence and trigger structured analysis:
 
 ![Smart Evidence Writer – Evidence Analysis Interface](Docs/Screenshot2025-10-29234453.png)
+![Smart Evidence Writer – Evidence Analysis Interface](Docs/Screenshot2025-10-29234848.png)
 
 The interface is intentionally minimal and task-focused, optimized for:
 - fast evidence upload,
