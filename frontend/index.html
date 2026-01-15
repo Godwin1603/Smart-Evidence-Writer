@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miracle Labs - Evidence Intelligence Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Alfa Labs</h1> Evidence Intelligence Platform</h1>
+            <p>Advanced AI-powered evidence analysis with multi-modal intelligence</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Evidence Upload Section -->
+        <section id="upload-section" class="upload-panel">
+            <div class="section-header">
+                <h2>Upload Evidence File</h2>
+                <p>Select image, video, or audio evidence for AI analysis</p>
+            </div>
+            
+            <div id="drop-zone" class="drop-zone">
+                <div class="drop-zone-content">
+                    <div class="upload-icon">📁</div>
+                    <p class="drop-text">Drag & drop your file here</p>
+                    <p class="or-text">or</p>
+                    <input type="file" id="evidenceFile" accept="image/*,video/*,audio/*" hidden>
+                    <button id="selectFileBtn" class="btn-primary">Browse Files</button>
+                    <p class="file-types">Supports: JPG, PNG, MP4, MP3, WAV files (Max: 100MB)</p>
+                </div>
+            </div>
+            
+            <div id="file-info" class="file-info" style="display: none;">
+                <div class="file-details">
+                    <span id="file-name" class="file-name"></span>
+                    <span id="file-type" class="file-type"></span>
+                </div>
+            </div>
+
+            <!-- Advanced Analysis Options -->
+            <section id="advanced-features" class="advanced-section">
+                <div class="section-header">
+                    <h3>Advanced Analysis Options</h3>
+                    <p>Enhanced evidence processing with specialized AI models</p>
+                </div>
+                
+                <div class="advanced-options">
+                    <label class="option-toggle">
+                        <input type="checkbox" id="advancedAnalysis" name="advancedAnalysis">
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Enable Advanced Analysis</span>
+                    </label>
+                    
+                    <div class="analysis-options" id="analysisOptions" style="display: none;">
+                        <div class="option-group">
+                            <label>Analysis Type:</label>
+                            <select id="analysisType">
+                                <option value="standard">Standard Analysis</option>
+                                <option value="detailed">Detailed Analysis</option>
+                                <option value="forensic">Forensic Analysis</option>
+                            </select>
+                        </div>
+                        
+                        <div class="option-group">
+                            <label>Report Language:</label>
+                            <select id="reportLanguage">
+                                <option value="en">English</option>
+                                <option value="ta">தமிழ் (Tamil)</option>
+                                <option value="kn">ಕನ್ನಡ (Kannada)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="option-group">
+                            <label>Case Information:</label>
+                            <input type="text" id="caseDescription" placeholder="Case description...">
+                            <input type="text" id="officerId" placeholder="Officer ID">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="action-buttons">
+                <button id="generateBtn" class="btn-primary" disabled>
+                    <span class="btn-text">Analyze Evidence</span>
+                    <span class="btn-icon">🔍</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Progress Section -->
+        <section id="progress-section" class="progress-section" style="display: none;">
+            <div class="section-header">
+                <h2>Analyzing Evidence</h2>
+                <p>Processing your file with AI analysis</p>
+            </div>
+            
+            <div class="progress-content">
+                <div class="spinner-container">
+                    <div class="spinner"></div>
+                </div>
+                <p id="progress-text" class="progress-text">Initializing analysis system...</p>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Report Section -->
+        <section id="report-section" class="report-section" style="display: none;">
+            <div class="section-header">
+                <h2>Analysis Report</h2>
+                <p>AI-generated evidence analysis report</p>
+            </div>
+            
+            <div class="report-actions">
+                <a id="downloadBtn" class="btn-download" href="#" target="_blank">
+                    <span class="btn-icon">📄</span>
+                    Download PDF Report
+                </a>
+                <button id="newAnalysisBtn" class="btn-secondary">
+                    <span class="btn-icon">🔄</span>
+                    New Analysis
+                </button>
+            </div>
+
+            <div id="report-content" class="report-content">
+                <!-- Report content will be inserted here -->
+            </div>
+        </section>
+
+        <!-- Case Management Section -->
+        <section id="case-management" class="case-section">
+            <div class="section-header">
+                <h2>Case Management</h2>
+                <p>View and manage your evidence cases</p>
+            </div>
+            
+            <div class="case-actions">
+                <button id="viewCasesBtn" class="btn-secondary">View All Cases</button>
+                <button id="searchCasesBtn" class="btn-secondary">Search Cases</button>
+                <button id="createCaseBtn" class="btn-secondary">Create New Case</button>
+            </div>
+            
+            <div id="cases-list" class="cases-list">
+                <!-- Cases will be populated here -->
+            </div>
+        </section>
+
+        <!-- Evidence Q&A Section -->
+        <section id="qa-section" class="qa-section">
+            <div class="section-header">
+                <h2>Evidence Q&A</h2>
+                <p>Ask questions about your evidence using natural language</p>
+            </div>
+            
+            <div class="qa-interface">
+                <div class="qa-input-group">
+                    <input type="text" id="questionInput" placeholder="Ask a question about the evidence...">
+                    <button id="askQuestionBtn" class="btn-primary">Ask</button>
+                </div>
+                <div id="qa-response" class="qa-response">
+                    <p>Ask questions like: "What vehicles were detected?" or "Show me all timestamps with suspicious activity"</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
